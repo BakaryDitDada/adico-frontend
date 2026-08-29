@@ -251,6 +251,24 @@ export const LogoImage = styled.div`
   & .red { color: #F44336; }
 `;
 
+// ADICO LOGO STYLES
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+`;
+
+export const ThemeLogo = styled.img`
+  width: 6rem;
+  max-width: 320px; /* Adjust based on your header/layout needs */
+  height: auto;
+  object-fit: contain;
+
+  /* Conditionally display based on the active mode */
+  display: ${({ $isDarkMode, $logoMode }) => ($isDarkMode === $logoMode ? 'block' : 'none')};
+`;
+
 /************************ ******************/
 /*********** PUBLIC FOOTER STYLES **********/
 /************************ ******************/

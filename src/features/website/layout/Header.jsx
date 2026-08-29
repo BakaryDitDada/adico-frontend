@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
+import { useTheme } from "styled-components";
 
 import homeContent from "@/core/data/homeContent";
 import ThemeToggle from "../../common/ThemeToggle";
@@ -21,12 +22,15 @@ import {
   NavLink,
   MobileMenuButton,
   LogoImage,
+  ThemeLogo,
+  LogoContainer,
 } from "./Layout.styles";
 import { Instagram, Youtube, Twitter, Facebook } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const theme = useTheme();
 
   const pathname = usePathname();
 
@@ -95,12 +99,30 @@ export default function Header() {
 
       <MainNav>
         <NavContent>
-          <Logo href="/" onClick={() => setIsMenuOpen(false)}>
+          {/* <Logo href="/" onClick={() => setIsMenuOpen(false)}>
             <LogoImage><span className="green">A</span><span className="yellow">DI</span><span className="red">CO</span></LogoImage>
             <LogoText>
               <h1>Mali</h1>
             </LogoText>
-          </Logo>
+          </Logo> */}
+          <LogoContainer>
+            {/* Light Mode Logo */}
+            <ThemeLogo
+              src={"images/LOGO-ADICO--LIGHT.jpg"} 
+              alt="ADICO Consortium Logo" 
+              // $isDarkMode={isDarkMode} 
+              $isDarkMode={theme.mode === "dark"} 
+              $logoMode={false} 
+            />
+            
+            {/* Dark Mode Logo */}
+            <ThemeLogo 
+              src={"images/LOGO-ADICO--DARK.jpg"} 
+              alt="ADICO Consortium Logo" 
+              $isDarkMode={theme.mode === "dark"} 
+              $logoMode={true} 
+            />
+          </LogoContainer>
 
           <NavLinks $isOpen={isMenuOpen}>
             {navItems.map((item) => (
