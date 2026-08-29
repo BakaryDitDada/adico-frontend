@@ -24,7 +24,7 @@ export const Header = styled.div`
 
   h1 {
     font-size: ${({ theme }) => theme.fontSizes.h1};
-    font-weight: ${theme.fontWeights.bold};
+    font-weight: ${({theme}) => theme.fontWeights.bold};
     color: ${({ theme }) => theme.colors.text.primary};
   }
 `;

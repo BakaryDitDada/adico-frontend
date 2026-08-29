@@ -10,6 +10,7 @@ export const HeroWrapper = styled.section`
   padding: ${({ theme }) => `${theme.spacing.huge} ${theme.spacing.xxl}`};
   overflow: hidden;
   background-color: ${({ $bgColor, theme }) => $bgColor || theme.colors.common.black};
+  border-radius: 1rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: ${({ theme }) => `${theme.spacing.xxxl} ${theme.spacing.lg}`};
@@ -34,6 +35,7 @@ export const BgImage = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 1rem;
 `;
 
 export const BgVideo = styled.video`

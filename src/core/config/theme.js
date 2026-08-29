@@ -1,5 +1,3 @@
-// src/core/styles/theme.js
-
 const baseTheme = {
   fonts: {
     primary: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
