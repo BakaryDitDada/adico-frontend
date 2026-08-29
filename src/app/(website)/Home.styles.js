@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const PageContainer = styled.div`
   width: 100%;
   max-width: 1440px;
-  margin-top: 2.2rem
-  margin: 0 auto;
+  margin: 2.2rem auto;
+  // margin-top: 2.2rem;
   padding: 0 1rem;
 `;
 
