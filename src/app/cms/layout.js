@@ -1,5 +1,5 @@
 import React from 'react';
-import RequireAuth from '@/utils/auth/RequireAuth';
+import RequireAuth from '@/core/utils/auth/RequireAuth';
 
 const PlatformLayout = ({
   children

@@ -13,21 +13,21 @@ import {
 import {
   useGetDashboardChartsQuery,
   useGetDashboardStatsQuery,
-} from '@/store/features/dashboard/dashboardApi';
+} from '@/core/store/features/dashboard/dashboardApi';
 
 const BarChartComponent = dynamic(
-  () => import('@/components/common/BarChart'),
+  () => import('@/core/ui/charts/BarChart'),
   {
     ssr: false,
   }
 );
 
-import DashboardKPISkeleton from '@/components/common/loading/DashboardKPISkeleton';
-import ChartSkeleton from '@/components/common/loading/ChartSkeleton';
+import DashboardKPISkeleton from '@/core/ui/loading/DashboardKPISkeleton';
+import ChartSkeleton from '@/core/ui/loading/ChartSkeleton';
 
 import * as S from './dashboard.styles';
 
-import { ChartsGrid } from '@/components/common/Charts.styles';
+import { ChartsGrid } from '@/core/ui/charts/Charts.styles';
 
 export default function DashboardPage() {
   const {

@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 
-import DocumentsHero from '@/components/website/sections/documents/DocumentsHero';
-import DocumentsFilters from '@/components/website/sections/documents/DocumentsFilters';
-import DocumentsGrid from '@/components/website/sections/documents/DocumentsGrid';
+import DocumentsHero from '@/features/website/sections/documents/DocumentsHero';
+import DocumentsFilters from '@/features/website/sections/documents/DocumentsFilters';
+import DocumentsGrid from '@/features/website/sections/documents/DocumentsGrid';
 import { PageContainer as DocumentsPageContainer } from '../Home.styles';
-import CTASection from '@/components/common/CTASection';
+import CTASection from '@/features/common/CTASection';
 import { AreaChartIcon, MessageSquare } from 'lucide-react';
 
 export default function DocumentsPage() {

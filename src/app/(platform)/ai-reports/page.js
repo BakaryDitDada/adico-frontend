@@ -11,10 +11,10 @@ import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Sparkles, Send, Copy, CheckCircle, AlertCircle } from 'lucide-react';
-import { selectCurrentToken } from '@/store/features/auth/authSlice';
-import { useGetReportsQuery } from '@/store/features/ai/AiApi';
+import { selectCurrentToken } from '@/core/store/features/auth/authSlice';
+import { useGetReportsQuery } from '@/core/store/features/ai/AiApi';
 import * as S from './AIReports.styles';
-import { formatDate, truncateStr } from '@/utils';
+import { formatDate, truncateStr } from '@/core/utils';
 
 // Validation schema
 const reportSchema = z.object({

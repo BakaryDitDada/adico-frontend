@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import StoreProvider from "@/providers/StoreProvider";
-import StyledComponentsRegistry from "@/lib/registry";
-import ClientProviders from "@/components/common/ClientProviders";
+import StoreProvider from "@/core/providers/StoreProvider";
+import StyledComponentsRegistry from "@/core/lib/registry";
+import ClientProviders from "@/features/common/ClientProviders";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "ADRS Mali - Platform de Gestion Integrée",
-  description: "Platform de gestion intégrée pour ADRS Mali, facilitant la gestion des projets, des ressources et des rapports.",
+  title: "ADICO Mali - Association pour le Développement de l’Initiative Communautaire ",
+  description: "Site Web de l'ONG ADICO, facilitant la gestion des projets, des ressources et des rapports.",
 };
 
 export default function RootLayout({ children }) {

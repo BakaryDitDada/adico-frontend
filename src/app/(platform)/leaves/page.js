@@ -10,23 +10,23 @@ import {
   useApproveLeaveMutation,
   useBulkCreateLeavesMutation,
   useGetLeavesWithPaginationQuery,
-} from '@/store/features/leaves/leavesApi';
+} from '@/core/store/features/leaves/leavesApi';
 
-import CustomTable from '@/components/common/CustomTable';
-import LeaveModal from '@/components/platform/leaves/LeavesModal';
-import { BulkImportModal } from '@/components/platform/bulkImportModal/BulkImportModal';
+import CustomTable from '@/features/common/CustomTable';
+import LeaveModal from '@/features/platform/leaves/LeavesModal';
+import { BulkImportModal } from '@/features/platform/bulkImportModal/BulkImportModal';
 
 import {
   leavesFilteredExcelData,
   leavesFilteredPDFData,
   leavesTableData,
-} from '@/data/platform';
-import { leaveSchema, LEAVE_LEAF_FIELDS } from '@/schemas/leaveSchema';
+} from '@/core/data/platform';
+import { leaveSchema, LEAVE_LEAF_FIELDS } from '@/core/schemas/leaveSchema';
 
-import { SAMPLE_LEAVES } from '@/lib/samples/leavesData';
+import { SAMPLE_LEAVES } from '@/core/lib/samples/leavesData';
 
 import * as S from './leavesPage.styles';
-import { PrimaryButton } from '@/components/common/Common.styles';
+import { PrimaryButton } from '@/features/common/Common.styles';
 
 export default function LeavesPage() {
   // -----------------------------

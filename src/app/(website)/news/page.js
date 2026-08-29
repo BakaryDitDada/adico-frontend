@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 
-import NewsHero from '@/components/website/sections/news/NewsHero';
-import NewsFilters from '@/components/website/sections/news/NewsFilters';
-import NewsGrid from '@/components/website/sections/news/NewsGrid';
-import NewsletterSection from '@/components/website/sections/news/NewsletterSection';
+import NewsHero from '@/features/website/sections/news/NewsHero';
+import NewsFilters from '@/features/website/sections/news/NewsFilters';
+import NewsGrid from '@/features/website/sections/news/NewsGrid';
+import NewsletterSection from '@/features/website/sections/news/NewsletterSection';
+
 import { PageContainer as NewsPageContainer } from '../Home.styles';
 
 export default function NewsPage() {

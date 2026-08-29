@@ -10,25 +10,25 @@ import {
   useDeleteTasksMutation,
   useBulkCreateTasksMutation,
   useUpdateTaskMutation
-} from '@/store/features/tasks/tasksApi';
+} from '@/core/store/features/tasks/tasksApi';
 
-import CustomTable from '@/components/common/CustomTable';
+import CustomTable from '@/features/common/CustomTable';
 // import TaskModal from '@/components/platform/tasks/TaskModal';
-import TaskModal from '@/components/platform/tasks/TasksModal';
-import { BulkImportModal } from '@/components/platform/bulkImportModal/BulkImportModal';
+import TaskModal from '@/features/platform/tasks/TasksModal';
+import { BulkImportModal } from '@/features/platform/bulkImportModal/BulkImportModal';
 
 import {
   tasksFilteredExcelData,
   tasksFilteredPDFData,
   tasksTableData,
-} from '@/data/platform';
-import { taskSchema, TASK_LEAF_FIELDS } from '@/schemas/taskSchema';
+} from '@/core/data/platform';
+import { taskSchema, TASK_LEAF_FIELDS } from '@/core/schemas/taskSchema';
 
-import { SAMPLE_TASKS } from '@/lib/samples/tasksData';
+import { SAMPLE_TASKS } from '@/core/lib/samples/tasksData';
 
 import * as S from './tasksPage.styles';
-import { PrimaryButton } from '@/components/common/Common.styles';
-import KanbanBoard from '@/components/platform/tasks/KanbanBoard';
+import { PrimaryButton } from '@/features/common/Common.styles';
+import KanbanBoard from '@/features/platform/tasks/KanbanBoard';
 
 export default function TasksPage() {
   // -----------------------------

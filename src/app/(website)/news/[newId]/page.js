@@ -1,11 +1,11 @@
 'use client';
 
 import { notFound, useParams } from 'next/navigation';
-import ArticleHero from '@/components/website/sections/news/ArticleHero';
-import ArticleContent from '@/components/website/sections/news/ArticleContent';
-import AuthorSection from '@/components/website/sections/news/AuthorSection';
-import RelatedArticles from '@/components/website/sections/news/RelatedArticles';
-import SharedSection from '@/components/website/sections/news/SharedSection';
+import ArticleHero from '@/features/website/sections/news/ArticleHero';
+import ArticleContent from '@/features/website/sections/news/ArticleContent';
+import AuthorSection from '@/features/website/sections/news/AuthorSection';
+import RelatedArticles from '@/features/website/sections/news/RelatedArticles';
+import SharedSection from '@/features/website/sections/news/SharedSection';
 import { PageContainer as ArticlePageContainer } from '../../Home.styles';
 
 // Sample data - replace with actual data fetching

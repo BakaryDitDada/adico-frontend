@@ -1,12 +1,12 @@
 'use client';
 
 import { useSelector } from 'react-redux';
-import RequireAuth from '@/utils/auth/RequireAuth';
-import Sidebar from '@/components/platform/layout/Sidebar';
-import Topbar from '@/components/platform/layout/Topbar';
-import * as S from '@/components/platform/layout/PlatformLayout.styles';
-import ChatWidget from '@/components/platform/ai/ChatWidget';
-import Loading from '@/components/common/Loading';
+import RequireAuth from '@/core/utils/auth/RequireAuth';
+import Sidebar from '@/features/platform/layout/Sidebar';
+import Topbar from '@/features/platform/layout/Topbar';
+import * as S from '@/features/platform/layout/PlatformLayout.styles';
+import ChatWidget from '@/features/platform/ai/ChatWidget';
+import Loading from '@/features/common/Loading';
 
 export default function PlatformLayout({ children }) {
   const { sidebarCollapsed } = useSelector((state) => state.global);

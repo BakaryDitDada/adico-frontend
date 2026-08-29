@@ -5,14 +5,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
-import { useActivateMutation } from "@/store/features/auth/authApi";
+import { useActivateMutation } from "@/core/store/features/auth/authApi";
 import {
   selectAuthMessage,
   selectVerificationToken,
   setAuthMethod
-} from "@/store/features/auth/authSlice";
-import { AuthForm, AuthTitle, AuthNumInput, AuthNumInputGroup, Button, AuthContainer, PageWrapper, ThemeToggleWrapper, ErrorMessage } from "@/styles/pages/auth/auth.styles";
-import ThemeToggle from "@/components/common/ThemeToggle";
+} from "@/core/store/features/auth/authSlice";
+import { AuthForm, AuthTitle, AuthNumInput, AuthNumInputGroup, Button, AuthContainer, PageWrapper, ThemeToggleWrapper, ErrorMessage } from "@/core/styles/pages/auth/auth.styles";
+import ThemeToggle from "@/features/common/ThemeToggle";
 
 const ConfirmEmail = ({ length = 4 }) => {
   const router = useRouter();

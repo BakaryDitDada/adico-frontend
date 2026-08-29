@@ -1,13 +1,13 @@
 'use client';
 
 import { notFound, useParams } from 'next/navigation';
-import ProjectHero from '@/components/website/sections/projects/ProjectHero';
-import ProjectDetail from '@/components/website/sections/projects/ProjectDetail';
-import ProjectPartners from '@/components/website/sections/projects/ProjectPartners';
-import ProjectTimeline from '@/components/website/sections/projects/ProjectTimeline';
-import RelatedProjects from '@/components/website/sections/projects/RelatedProjects';
+import ProjectHero from '@/features/website/sections/projects/ProjectHero';
+import ProjectDetail from '@/features/website/sections/projects/ProjectDetail';
+import ProjectPartners from '@/features/website/sections/projects/ProjectPartners';
+import ProjectTimeline from '@/features/website/sections/projects/ProjectTimeline';
+import RelatedProjects from '@/features/website/sections/projects/RelatedProjects';
 import { PageContainer as ProjectDetailContainer, HrLine } from '../../Home.styles';
-import CTASection from '@/components/common/CTASection';
+import CTASection from '@/features/common/CTASection';
 import { FileText, MessageSquare } from 'lucide-react';
 
 // Sample project data (extended from list)

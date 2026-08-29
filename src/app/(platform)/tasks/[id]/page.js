@@ -18,14 +18,14 @@ import {
   Download,
 } from 'lucide-react';
 
-import { useGetTaskQuery, useDeleteTaskMutation } from '@/store/features/tasks/tasksApi';
+import { useGetTaskQuery, useDeleteTaskMutation } from '@/core/store/features/tasks/tasksApi';
 
-import DetailPage from '@/components/common/DetailPage'; // the generic shell
-import * as S from '@/components/common/DetailPage.styles'; // all styled components
-import { Badge } from '@/components/common/Common.styles';
-import AvatarStack from '@/components/ui/avatar/AvatarStack';
-import { formatDate } from '@/utils';
-import ProgressBar from '@/components/ui/ProgressBar';
+import DetailPage from '@/features/common/DetailPage'; // the generic shell
+import * as S from '@/features/common/DetailPage.styles'; // all styled components
+import { Badge } from '@/features/common/Common.styles';
+import AvatarStack from '@/core/ui/avatar/AvatarStack';
+import { formatDate } from '@/core/utils';
+import ProgressBar from '@/core/ui/ProgressBar';
 
 // ---------- MOCK DATA (would come from props/API) ----------
 const taskData = {

@@ -8,23 +8,23 @@ import {
   useGetEmployeesWithPaginationQuery,
   useDeleteEmployeeMutation,
   useBulkCreateEmployeesMutation
-} from '@/store/features/employees/employeesApi';
+} from '@/core/store/features/employees/employeesApi';
 
-import CustomTable from '@/components/common/CustomTable';
-import EmployeeModal from '@/components/platform/employees/EmployeesModal';
-import { BulkImportModal } from '@/components/platform/bulkImportModal/BulkImportModal';
+import CustomTable from '@/features/common/CustomTable';
+import EmployeeModal from '@/features/platform/employees/EmployeesModal';
+import { BulkImportModal } from '@/features/platform/bulkImportModal/BulkImportModal';
 
 import {
   employeesFilteredExcelData,
   employeesFilteredPDFData,
   employeesTableData,
-} from '@/data/platform';
-import { EmployeeSchema, EMP_LEAF_FIELDS } from '@/schemas/employeeSchema';
+} from '@/core/data/platform';
+import { EmployeeSchema, EMP_LEAF_FIELDS } from '@/core/schemas/employeeSchema';
 
-import { SAMPLE_EMPLOYEES } from '@/lib/samples/employeesData';
+import { SAMPLE_EMPLOYEES } from '@/core/lib/samples/employeesData';
 
 import * as S from './page.styles';
-import { PrimaryButton } from '@/components/common/Common.styles';
+import { PrimaryButton } from '@/features/common/Common.styles';
 
 export default function EmployeesPage() {
   // -----------------------------

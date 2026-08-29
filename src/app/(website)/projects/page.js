@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 
-import ProjectsHero from '@/components/website/sections/projects/ProjectsHero';
-import ProjectsFilters from '@/components/website/sections/projects/ProjectsFilters';
-import ProjectsGrid from '@/components/website/sections/projects/ProjectsGrid';
-import ProjectsCTA from '@/components/website/sections/projects/ProjectsCTA';
+import ProjectsHero from '@/features/website/sections/projects/ProjectsHero';
+import ProjectsFilters from '@/features/website/sections/projects/ProjectsFilters';
+import ProjectsGrid from '@/features/website/sections/projects/ProjectsGrid';
+import ProjectsCTA from '@/features/website/sections/projects/ProjectsCTA';
 import { PageContainer as ProjectsPageContainer } from '../Home.styles';
 
 export default function ProjectsPage() {

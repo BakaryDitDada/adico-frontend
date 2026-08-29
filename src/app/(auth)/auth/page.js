@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 import { useTheme } from 'styled-components';
-import { useSigninMutation } from '@/store/features/auth/authApi';
-import { setAuthMethod, setCredentials, setAuthSuccess, selectAuthLoading } from '@/store/features/auth/authSlice';
-import LoginForm from '@/components/auth/LoginForm';
-import RegisterForm from '@/components/auth/RegisterForm';
-import usePersist from '@/hooks/auth/usePersist';
-import ThemeToggle from '@/components/common/ThemeToggle';
+import { useSigninMutation } from '@/core/store/features/auth/authApi';
+import { setAuthMethod, setCredentials, setAuthSuccess, selectAuthLoading } from '@/core/store/features/auth/authSlice';
+import LoginForm from '@/features/auth/LoginForm';
+import RegisterForm from '@/features/auth/RegisterForm';
+import usePersist from '@/core/hooks/auth/usePersist';
+import ThemeToggle from '@/features/common/ThemeToggle';
 
 import {
   PageWrapper,
@@ -17,12 +17,12 @@ import {
   OverlayWrapper,
   OverlayPanel,
   GhostButton,
-} from '@/styles/pages/auth/auth.styles';
-import { OutlineButton } from '@/components/common/Common.styles';
+} from '@/core/styles/pages/auth/auth.styles';
+import { OutlineButton } from '@/features/common/Common.styles';
 
 export default function AuthPage() {
   const [isSignUp, setIsSignUp] = useState(false);
-  const theme = useTheme();
+  // const theme = useTheme();
 
   return (
     <PageWrapper>
@@ -47,7 +47,8 @@ export default function AuthPage() {
                   <span className='or_text'>OU</span>
                   <span className='or_line'></span>
                 </div>
-                <OutlineButton $border={theme.colors.borderLight} onClick={() => setIsSignUp(false)}>
+
+                <OutlineButton onClick={() => setIsSignUp(false)}>
                   Connectez-vous
                 </OutlineButton>
               </>
@@ -60,7 +61,7 @@ export default function AuthPage() {
                   <span className='or_text'>OU</span>
                   <span className='or_line'></span>
                 </div>
-                <OutlineButton $border={theme.colors.borderLight} onClick={() => setIsSignUp(true)}>
+                <OutlineButton onClick={() => setIsSignUp(true)}>
                   Inscrivez-vous
                 </OutlineButton>
               </>
