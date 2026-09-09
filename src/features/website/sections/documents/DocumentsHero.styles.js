@@ -10,7 +10,7 @@ export const HeroWrapper = styled.section`
 export const HeroTitle = styled(motion.h1)`
   font-size: clamp(2rem, 5vw, ${({ theme }) => theme.fontSizes.h1});
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-  color: ${({ theme }) => theme.colors.text.primary};
+  color: ${({ theme }) => theme.colors.common.white};
   margin-bottom: ${({ theme }) => theme.spacing.md};
   
   span {
@@ -20,7 +20,7 @@ export const HeroTitle = styled(motion.h1)`
 
 export const HeroSubtitle = styled(motion.p)`
   font-size: ${({ theme }) => theme.fontSizes.bodyLg};
-  color: ${({ theme }) => theme.colors.text.secondary};
+  color: ${({ theme }) => theme.colors.common.white};
   max-width: 700px;
   margin: 0 auto ${({ theme }) => theme.spacing.xxl};
   line-height: 1.6;
