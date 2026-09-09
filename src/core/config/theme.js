@@ -9,6 +9,7 @@ const baseTheme = {
     sm: '1.4rem', 
     caption: '1.4rem', 
     body: '1.6rem',
+    bodyLg: '1.8rem',
     h4: '1.8rem',
     h3: '2.4rem',
     h2: '3.2rem',

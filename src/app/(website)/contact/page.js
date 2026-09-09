@@ -15,7 +15,7 @@ export default function ContactPage() {
           subtitle="Disponible"
           title="Contactez-nous"
           description="Une question, un projet ? Notre équipe est à votre écoute pour échanger sur vos besoins et opportunités de collaboration."
-          bgImage="/images/ADICO-IMAGE.jfif"
+          bgImage="/images/ADICO-IMAGE.jpg"
           align="center"
         />
       <ContactForm />

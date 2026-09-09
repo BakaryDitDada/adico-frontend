@@ -19,7 +19,7 @@ export const homeContent = {
   
   about: {
     title: "Qui sommes-nous ?",
-    description: "Créée en 1993, l'ONG ADICO (Appui au Développement Intégré des Communautés) est une organisation malienne œuvrant pour le plein épanouissement des couches vulnérables. Nous accompagnons activement les femmes, les enfants et les personnes handicapées à travers des actions communautaires de proximité.",
+    description: "Créée en 1993, l'ONG ADICO (Association pour le Développement de l'Initiative Communautaire) est une organisation communautaire qui s&apos;engage à promouvoir le développement durable et l'innovation dans notre communauté. Nous croyons en la puissance de la collaboration et de l'action collective pour créer un avenir meilleur pour tous.",
     mission: {
       title: "Notre Mission",
       description: "S'engager en faveur des couches vulnérables pour un développement intégré, inclusif et durable au Mali.",
@@ -291,11 +291,11 @@ export const homeContent = {
       full: "ONG ADICO, Siège Social, Mali"
     },
     phone: {
-      display: "+223 20 20 20 20",
-      value: "+22320202020"
+      display: "+223 79 34 01 81 / 44 51 82 69",
+      value: "+22379340181"
     },
     email: {
-      primary: "contact@adico-mali.org",
+      primary: "adicoa@yahoo.fr",
       support: "support@adico-mali.org"
     },
     hours: {

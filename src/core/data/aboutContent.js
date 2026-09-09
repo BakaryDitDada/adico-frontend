@@ -219,18 +219,20 @@ export const teamData = {
     {
       id: 1,
       name: 'Abdramane SANGARE',
-      role: 'Co-fondateur & Coordonnateur Général',
-      bio: 'Co-fondateur de l\'ONG ADICO, engagé depuis 1993 dans la promotion du développement communautaire et la protection des couches vulnérables.',
+      role: 'Coordinateur des Programmes & Président du Bureau Exécutif',
+      bio: 'Coordinateur des Programmes & Président du Bureau Exécutif, engagé depuis 1993 dans la promotion du développement communautaire et la protection des couches vulnérables.',
       expertise: ['Gestion Stratégique', 'Développement Communautaire', 'Plaidoyer & Gouvernance'],
-      social: { linkedin: '#', email: `a.sangare@gmail.com` }
+      social: { linkedin: '#', email: `kotorola@yahoo.fr` },
+      image: '/images/profile-placeholder.jpg'
     },
     {
       id: 2,
       name: 'Aguib COULIBALY',
-      role: 'Co-fondateur & Responsable Projets',
-      bio: 'Co-fondateur de l\'ONG, expert dans la conception et le pilotage des programmes sociaux, de santé et d\'environnement.',
+      role: 'Responsable Projets',
+      bio: 'Expert dans la conception et le pilotage des programmes sociaux, de santé et d\'environnement.',
       expertise: ['Ingénierie de Projets', 'Partenariats PTF', 'Développement Durable'],
-      social: { linkedin: '#', email: `a.coulibaly@yahoo.fr` }
+      social: { linkedin: '#', email: `aguibcoul@yahoo.fr` },
+      image: '/images/profile-placeholder.jpg'
     },
     {
       id: 3,
@@ -238,7 +240,8 @@ export const teamData = {
       role: 'Permanent & Responsable Opérationnel',
       bio: 'Membre permanent assurant la coordination quotidienne des équipes sur le terrain et la mise en œuvre des actions de proximité.',
       expertise: ['Coordination de Terrain', 'Suivi-Évaluation', 'Mobilisation Sociale'],
-      social: { linkedin: '#', email: `s.diarra@gmail.com` }
+      social: { linkedin: '#', email: `s.diarra@gmail.com` },
+      image: '/images/profile-placeholder.jpg'
     },
     {
       id: 4,
@@ -246,7 +249,8 @@ export const teamData = {
       role: 'Responsable Programmes Genre & Autonomisation',
       bio: 'Spécialiste de l\'accompagnement socio-économique des femmes et de la structuration des activités génératrices de revenus.',
       expertise: ['Entrepreneuriat Féminin', 'Inclusion Sociale', 'Microfinance'],
-      social: { linkedin: '#', email: `f.keita@gmail.com` }
+      social: { linkedin: '#', email: `f.keita@gmail.com` },
+      image: '/images/profile-placeholder.jpg'
     },
     {
       id: 5,
@@ -254,7 +258,8 @@ export const teamData = {
       role: 'Responsable Santé & Nutrition Communautaire',
       bio: 'Coordonnateur des campagnes de sensibilisation à la santé de la reproduction et des programmes nutritionnels.',
       expertise: ['Santé Publique', 'Nutrition', 'Éducation Communautaire'],
-      social: { linkedin: '#', email: `o.sissoko@gmail.com` }
+      social: { linkedin: '#', email: `o.sissoko@gmail.com` },
+      image: '/images/profile-placeholder.jpg'
     },
     {
       id: 6,
@@ -262,7 +267,8 @@ export const teamData = {
       role: 'Chargée de l\'Éducation & Inclusion',
       bio: 'Spécialiste en ingénierie de formation, dédiée aux centres d\'alphabétisation et à l\'intégration des personnes handicapées.',
       expertise: ['Éducation Inclusive', 'Alphabétisation', 'Droits des Personnes Handicapées'],
-      social: { linkedin: '#', email: `a.traore@gmail.com` }
+      social: { linkedin: '#', email: `a.traore@gmail.com` },
+      image: '/images/profile-placeholder.jpg'
     }
   ]
 };

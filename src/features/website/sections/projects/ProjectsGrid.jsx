@@ -98,22 +98,17 @@ export default function ProjectsGrid({
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <S.CardImage>
-                      <div 
-                        className="card-image"
-                        style={{
-                          background: `linear-gradient(135deg, ${project.category === 'hydraulique' ? '#2563eb' : project.category === 'agricole' ? '#10b981' : '#7c3aed'}20, ${project.category === 'hydraulique' ? '#2563eb' : project.category === 'agricole' ? '#10b981' : '#7c3aed'}05)`,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center'
-                        }}
-                      >
-                        {project.categoryIcon}
-                      </div>
+                    <S.CardImageWrapper>
+                      <S.CardImage
+                        src={project.image}
+                        alt={project.title}
+                        width={400}
+                        height={200}
+                      />
                       <span className={`status-badge ${project.status}`}>
                         {getStatusLabel(project.status)}
                       </span>
-                    </S.CardImage>
+                    </S.CardImageWrapper>
                     
                     <S.CardContent>
                       <S.CardCategory>

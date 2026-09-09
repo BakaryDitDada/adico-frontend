@@ -31,7 +31,8 @@ const getYouTubeId = (url) => {
   return match && match[2].length === 11 ? match[2] : url;
 };
 
-export default function PageHero({ 
+export default function PageHero({
+  children,
   title, 
   subtitle, 
   description, 
@@ -90,15 +91,21 @@ export default function PageHero({
           </S.Subtitle>
         )}
         
-        <S.Title variants={itemVariants} $align={align}>
-          {title}
-        </S.Title>
+        {
+          title && (
+            <S.Title variants={itemVariants} $align={align}>
+              {title}
+            </S.Title>
+          )
+        }
         
         {description && (
           <S.Description variants={itemVariants} $align={align}>
             {description}
           </S.Description>
         )}
+
+        { children }
       </S.ContentContainer>
     </S.HeroWrapper>
   );

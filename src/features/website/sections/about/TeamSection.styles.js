@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 /* ================= GRID ================= */
 
@@ -47,22 +48,28 @@ export const CardHeader = styled.div`
   overflow: hidden;
 `;
 
-export const TeamImage = styled.div`
+export const TeamImageWrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    135deg,
-    ${({ theme }) => theme.colors.primary}20,
-    ${({ theme }) => theme.colors.secondary}10
-  );
+  // background: linear-gradient(
+  //   135deg,
+  //   ${({ theme }) => theme.colors.primary}20,
+  //   ${({ theme }) => theme.colors.secondary}10
+  // );
 
   svg {
     color: ${({ theme }) => theme.colors.text.secondary};
     opacity: 0.3;
   }
+`;
+
+export const TeamImage = styled(Image)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export const CardOverlay = styled.div`

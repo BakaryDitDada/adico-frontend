@@ -15,9 +15,8 @@ export const Section = styled.section`
 
 export const SectionTitle = styled.h2`
   text-align: center;
-  // font-size: clamp(2rem, 4vw, 2.5rem);
   font-size: ${({ theme }) => theme.fontSizes.h2};
-  margin-bottom: 5rem;
+  margin-bottom: 3.5rem;
   color: ${({ theme }) => theme.colors.text.primary};
   
   span {

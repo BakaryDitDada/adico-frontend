@@ -1,8 +1,8 @@
 import { Map, FolderTree, Users, Target, Droplets, Sprout, Building, HeartHandshake, BookOpen, Trees, Coins, Heart, Shield } from 'lucide-react';
 
 export const projectsHero = {
-  title: "Nos Projets de Développementt",
-  description: "Découvrez l&apos;ensemble de nos projets agricoles, d&apos;hydraulique rurale et d&apos;infrastructures qui transforment durablement la vallée du fleuve Sénégal.",
+  title: "Nos Projets de Développement",
+  description: "Découvrez l'ensemble de nos projets dans le domaine de la santé, de l'éducation, de l'agro-foresterie et de la protection environnementale qui contribuent durablement au développement socio-économique de la famille et de la communauté.",
   stats: [
     {
       icon: <FolderTree />,
@@ -46,7 +46,7 @@ export const projectsData = [
     startDate: '2025',
     beneficiaries: 450,
     progress: 75,
-    image: '/projects/maraichage-femmes.jpg'
+    image: '/images/projects-placeholder.jpg'
   },
   {
     id: 2,
@@ -61,7 +61,7 @@ export const projectsData = [
     startDate: '2023',
     beneficiaries: 600,
     progress: 100,
-    image: '/projects/alphabetisation.jpg'
+    image: '/images/projects-placeholder.jpg'
   },
   {
     id: 3,
@@ -76,7 +76,7 @@ export const projectsData = [
     startDate: '2024',
     beneficiaries: 800,
     progress: 60,
-    image: '/projects/agroforesterie.jpg'
+    image: '/images/projects-placeholder.jpg'
   },
   {
     id: 4,
@@ -91,7 +91,7 @@ export const projectsData = [
     startDate: '2024',
     beneficiaries: 1200,
     progress: 80,
-    image: '/projects/microfinance.jpg'
+    image: '/images/projects-placeholder.jpg'
   },
   {
     id: 5,
@@ -106,7 +106,7 @@ export const projectsData = [
     startDate: '2026',
     beneficiaries: 1500,
     progress: 0,
-    image: '/projects/sante-maternelle.jpg'
+    image: '/images/projects-placeholder.jpg'
   },
   {
     id: 6,
@@ -121,6 +121,6 @@ export const projectsData = [
     startDate: '2023',
     beneficiaries: 300,
     progress: 100,
-    image: '/projects/gouvernance.jpg'
+    image: '/images/projects-placeholder.jpg'
   }
 ];

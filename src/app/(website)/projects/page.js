@@ -7,7 +7,7 @@ import ProjectsFilters from '@/features/website/sections/projects/ProjectsFilter
 import ProjectsGrid from '@/features/website/sections/projects/ProjectsGrid';
 import ProjectsCTA from '@/features/website/sections/projects/ProjectsCTA';
 import { PageContainer as ProjectsPageContainer } from '../Home.styles';
-
+ 
 export default function ProjectsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [category, setCategory] = useState('');
@@ -17,26 +17,26 @@ export default function ProjectsPage() {
   
   return (
     <ProjectsPageContainer>
-      <ProjectsHero />
-        <ProjectsFilters 
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          category={category}
-          setCategory={setCategory}
-          status={status}
-          setStatus={setStatus}
-          region={region}
-          setRegion={setRegion}
-          year={year}
-          setYear={setYear}
-        />
-        <ProjectsGrid 
-          searchQuery={searchQuery}
-          category={category}
-          status={status}
-          region={region}
-          year={year}
-        />
+      <ProjectsHero /> 
+      <ProjectsFilters 
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        category={category}
+        setCategory={setCategory}
+        status={status}
+        setStatus={setStatus}
+        region={region}
+        setRegion={setRegion}
+        year={year}
+        setYear={setYear}
+      />
+      <ProjectsGrid 
+        searchQuery={searchQuery}
+        category={category}
+        status={status}
+        region={region}
+        year={year}
+      />
       <ProjectsCTA />
     </ProjectsPageContainer>
   );

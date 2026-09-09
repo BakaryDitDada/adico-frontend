@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const GridContainer = styled.div`
   position: relative;
@@ -43,7 +44,7 @@ export const ProjectCard = styled(motion.article)`
   }
 `;
 
-export const CardImage = styled.div`
+export const CardImageWrapper = styled.div`
   height: 200px;
   overflow: hidden;
   position: relative;
@@ -79,6 +80,13 @@ export const CardImage = styled.div`
       color: white;
     }
   }
+`;
+
+export const CardImage = styled(Image)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 `;
 
 export const CardContent = styled.div`

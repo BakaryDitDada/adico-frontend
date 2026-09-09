@@ -43,9 +43,9 @@ export default function TeamSection() {
               >
 
                 <S.CardHeader>
-                  <S.TeamImage>
-                    <Users size={64} />
-                  </S.TeamImage>
+                  <S.TeamImageWrapper>
+                    <S.TeamImage src={member.image} alt={member.name} width={100} height={100} />
+                  </S.TeamImageWrapper>
 
                   <S.CardOverlay>
                     <S.SocialButton href={`mailto:${member.social.email}`}>

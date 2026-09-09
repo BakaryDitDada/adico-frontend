@@ -10,6 +10,9 @@ const GlobalStyles = createGlobalStyle`
     --primary-color: #2563eb;
     --primary-dark: #1d4ed8;
     --primary-light: #3b82f6;
+    --secondary-color: #10b981;
+    --secondary-dark: #0ca471;
+    --secondary-light: #15d092;
     --background-primary: #ffffff;
     --background-secondary: #f9fafb;
     --text-primary: #1f2937;
@@ -22,6 +25,7 @@ const GlobalStyles = createGlobalStyle`
     --primary-color: #3b82f6;
     --primary-dark: #60a5fa;
     --primary-light: #1d4ed8;
+
     --background-primary: #111827;
     --background-secondary: #1f2937;
     --text-primary: #f9fafb;

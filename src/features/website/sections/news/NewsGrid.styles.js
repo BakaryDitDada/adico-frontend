@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export const GridContainer = styled.div`
   position: relative;
@@ -101,7 +102,7 @@ export const NewsCard = styled(motion.article)`
   }
 `;
 
-export const CardImage = styled.div`
+export const CardImageWrapper = styled.div`
   position: relative;
   height: 200px;
   overflow: hidden;
@@ -125,6 +126,13 @@ export const CardImage = styled.div`
     font-weight: ${({ theme }) => theme.fontWeights.semibold};
     z-index: 1;
   }
+`;
+
+export const CardImage = styled(Image)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 `;
 
 export const CardContent = styled.div`

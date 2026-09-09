@@ -1,8 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { FileText, Download, BookOpen } from 'lucide-react';
 import * as S from './DocumentsHero.styles';
+import PageHero from '../PageHero';
 
 export default function DocumentsHero() {
   const stats = [
@@ -12,7 +12,12 @@ export default function DocumentsHero() {
   ];
 
   return (
-    <S.HeroWrapper>
+    // <S.HeroWrapper>
+    <PageHero
+      subtitle="Ressources & Publications"
+      bgImage="/images/documentation.jpg"
+      align="center"
+    >
       <S.HeroTitle
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -40,6 +45,7 @@ export default function DocumentsHero() {
           </S.StatItem>
         ))}
       </S.StatsGrid>
-    </S.HeroWrapper>
+    </PageHero>
+    // </S.HeroWrapper>
   );
 }

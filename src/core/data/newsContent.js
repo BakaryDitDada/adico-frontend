@@ -10,7 +10,7 @@ export const news = {
       author: 'Dr. Amadou Diallo',
       readTime: '5 min',
       views: 1245,
-      image: '/news/irrigation-project.jpg',
+      image: '/images/actu-placeholder.jpg',
       featured: true
     },
     {
@@ -22,7 +22,7 @@ export const news = {
       author: 'Fatoumata Koné',
       readTime: '3 min',
       views: 892,
-      image: '/news/training-program.jpg'
+      image: '/images/actu-placeholder.jpg',
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ export const news = {
       author: 'Aïssata Diarra',
       readTime: '4 min',
       views: 1567,
-      image: '/news/partnership.jpg'
+      image: '/images/actu-placeholder.jpg',
     },
     {
       id: 4,
@@ -44,7 +44,7 @@ export const news = {
       author: 'Boubacar Coulibaly',
       readTime: '6 min',
       views: 2103,
-      image: '/news/market-inauguration.jpg'
+      image: '/images/actu-placeholder.jpg',
     },
     {
       id: 5,
@@ -55,7 +55,7 @@ export const news = {
       author: 'Moussa Traoré',
       readTime: '8 min',
       views: 1789,
-      image: '/news/annual-report.jpg'
+      image: '/images/actu-placeholder.jpg',
     },
     {
       id: 6,
@@ -66,7 +66,7 @@ export const news = {
       author: 'Kadiatou Keita',
       readTime: '7 min',
       views: 1345,
-      image: '/news/satellite-tech.jpg'
+      image: '/images/actu-placeholder.jpg',
     }
   ]
 }

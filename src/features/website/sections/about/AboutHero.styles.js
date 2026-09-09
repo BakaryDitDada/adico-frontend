@@ -33,6 +33,12 @@ const glitch = keyframes`
   100% { clip-path: inset(100% 0 0 0); transform: translate(0); }
 `;
 
+const gradientFlow = keyframes`
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+`;
+
 /* ================= LAYOUT ================= */
 
 export const HeroContainer = styled.section`
@@ -65,6 +71,37 @@ export const HeroContainer = styled.section`
       radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
     z-index: 0;
   }
+`;
+
+export const HeroTitle = styled(motion.h1)`
+  font-size: clamp(2rem, 5vw, ${({ theme }) => theme.fontSizes.h1});
+  // font-weight: 800;
+  font-weight: ${({ theme }) => theme.fontWeights.bold};
+  color: ${({ theme }) => theme.colors.text.primary};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  line-height: 1.1;
+  
+  .gradient-text {
+    background: linear-gradient(
+      90deg,
+      ${({ theme }) => theme.colors.primary},
+      ${({ theme }) => theme.colors.secondary}
+    );
+    background-size: 200% 200%;
+    animation: ${gradientFlow} 5s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+  }
+`;
+
+export const HeroDescription = styled(motion.p)`
+  font-size: ${({ theme }) => theme.fontSizes.bodyLg};
+  color: ${({ theme }) => theme.colors.text.secondary};
+  max-width: 700px;
+  margin: 0 auto ${({ theme }) => theme.spacing.xxl};
+  line-height: 1.7;
 `;
 
 export const BackgroundElements = styled.div`

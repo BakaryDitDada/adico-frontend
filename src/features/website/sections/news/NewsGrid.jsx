@@ -200,22 +200,17 @@ export default function NewsGrid({
                     transition={{ delay: index * 0.1 }}
                     whileHover={{ y: -5 }}
                   >
-                    <S.CardImage>
-                      <div 
-                        className="card-image"
-                        style={{
-                          background: `linear-gradient(135deg, #2563eb20, #7c3aed20)`,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center'
-                        }}
-                      >
-                        <Calendar size={48} color="var(--text-secondary)" opacity={0.2} />
-                      </div>
+                    <S.CardImageWrapper> 
+                      <S.CardImage 
+                        src={article.image}
+                        alt={article.title}
+                        width={400}
+                        height={200}
+                      />
                       <div className="category-badge">
                         {article.category}
                       </div>
-                    </S.CardImage>
+                    </S.CardImageWrapper>
                     
                     <S.CardContent>
                       <S.CardMeta>
