@@ -16,6 +16,7 @@ import {
 import homeContent from '@/core/data/homeContent';
 import { adicoHeroConfig } from '@/core/data/sampleHeroConfig';
 import CTASection from '@/features/common/CTASection';
+import TestimonialSlider from '@/core/ui/testimonials/TestimonialSlider';
 
 const ctaContent = homeContent?.ctaSectionContent;
 
@@ -35,6 +36,8 @@ export default function Home() {
       <ValuesSection />
 
       <PartnersLogos />
+
+      <TestimonialSlider testimonials={homeContent?.testimonials} />
 
       <CTASection
         title={ctaContent?.title}

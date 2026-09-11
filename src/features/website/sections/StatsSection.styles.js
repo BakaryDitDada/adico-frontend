@@ -19,9 +19,10 @@ export const StatsContent = styled.div`
 
 export const SectionTitle = styled.h2`
   text-align: center;
-  font-size: ${({ theme }) => theme.fontSizes.h2ze};
+  font-size: ${({ theme }) => theme.fontSizes.h2};
   margin-bottom: ${({ theme }) => theme.spacing.md}; // 20px
   color: ${({ theme }) => theme.colors.text.primary};
+  // color: ${({ theme }) => theme.colors.text.light};
   
   span {
     color: ${({ theme }) => theme.colors.primary};

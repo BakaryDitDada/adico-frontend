@@ -48,7 +48,7 @@ export const DocumentsGridWrapper = styled.div`
 `;
 
 export const DocumentCard = styled(motion.div)`
-  background: ${({ theme }) => theme.colors.background.primary};
+  background: ${({ theme }) => theme.colors.background.secondary};
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.radii.lg};
   padding: ${({ theme }) => theme.spacing.lg};

@@ -9,7 +9,8 @@ export const Heading1 = styled.h1`
     font-weight: ${theme.fontWeights.bold};
     line-height: ${theme.lineHeights.h1};
     font-family: ${theme.fonts.primary};
-    color: ${theme.colors.text.primary};
+    // color: ${theme.colors.text.primary};
+    color: ${theme.colors.text.light};
     margin: 0 0 ${theme.spacing.md};
   `}
 `;
@@ -17,11 +18,12 @@ export const Heading1 = styled.h1`
 // Heading 2
 export const Heading2 = styled.h2`
   ${({ theme }) => `
-    font-size: ${theme.fontSizes.h2ze};
+    font-size: ${theme.fontSizes.h2};
     font-weight: ${theme.fontWeights.semibold};
     line-height: ${theme.lineHeights.h2};
     font-family: ${theme.fonts.primary};
-    color: ${theme.colors.text.primary};
+    // color: ${theme.colors.text.primary};
+    color: ${theme.colors.text.light};
     margin: 0 0 ${theme.spacing.sm};
   `}
 `;
@@ -33,7 +35,8 @@ export const Heading3 = styled.h3`
     font-weight: ${theme.fontWeights.medium};
     line-height: ${theme.lineHeights.h3};
     font-family: ${theme.fonts.primary};
-    color: ${theme.colors.text.primary};
+    // color: ${theme.colors.text.primary};
+    color: ${theme.colors.text.light};
     margin: 0 0 ${theme.spacing.sm};
   `}
 `;
@@ -45,7 +48,8 @@ export const Paragraph = styled.p`
     font-weight: ${theme.fontWeights.semibold};
     line-height: ${theme.lineHeights.body};
     font-family: ${theme.fonts.primary};
-    color: ${theme.colors.text.secondary};
+    // color: ${theme.colors.text.secondary};
+    color: ${theme.colors.text.light};
     margin: 0 0 ${theme.spacing.md};
   `}
 `;

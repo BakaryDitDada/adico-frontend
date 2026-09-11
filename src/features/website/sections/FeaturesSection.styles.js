@@ -58,8 +58,7 @@ export const FeaturesGrid = styled.div`
 `;
 
 export const FeatureCard = styled(motion.div)`
-  background: ${({ theme, $isHovered }) => 
-    $isHovered ? theme.colors.background.secondary : theme.colors.background.primary};
+  background: ${({ theme }) => theme.colors.background.secondary};
   border-radius: ${({ theme }) => theme.radii.lg}; // 16px
   padding: ${({ theme }) => theme.spacing.lg}; // 30px
   border: 1px solid ${({ theme, $isHovered }) => 
@@ -108,6 +107,7 @@ export const FeatureTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes.bodyLg}; // 1.25rem ≈ 18px
   font-weight: ${({ theme }) => theme.fontWeights.semibold};
   color: ${({ theme }) => theme.colors.text.primary};
+  // color: ${({ theme }) => theme.colors.text.light};
   margin-bottom: ${({ theme }) => theme.spacing.sm}; // 12px
   transition: color 0.3s ease;
   

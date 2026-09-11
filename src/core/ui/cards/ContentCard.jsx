@@ -2,6 +2,7 @@
 
 import React from 'react';
 import * as S from './ContentCard.styles';
+import { useTheme } from 'styled-components';
 
 // Helper to extract YouTube ID
 const getYouTubeId = (url) => {
@@ -22,9 +23,12 @@ export default function ContentCard({
   reverse = false, // Flips image/text sides if horizontal
   ctaText,
   ctaLink,
+  height
 }) {
   const youtubeId = getYouTubeId(youtube);
   const hasMedia = image || video || youtubeId;
+
+  const theme = useTheme();
 
   return (
     <S.CardWrapper
@@ -32,8 +36,9 @@ export default function ContentCard({
       $reverse={reverse}
       // whileHover="hover" // Triggers 'hover' variant on children
       initial={{ y: 0, boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)' }}
-      whileHover={{ y: -6, boxShadow: '0 12px 30px rgba(0, 0, 0, 0.12)' }}
+      whileHover={{ y: -6, boxShadow: '0 12px 30px rgba(0, 0, 0, 0.12)', borderColor: `${theme.colors.border}` }}
       transition={{ duration: 0.3, ease: 'easeOut' }}
+      $height={height}
     >
       {hasMedia && (
         <S.MediaContainer $layout={layout}>

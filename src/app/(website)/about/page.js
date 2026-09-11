@@ -15,7 +15,7 @@ export default function AboutPage() {
     <PageContainer>
       <AboutHero />
       <MissionVision />
-      <TimelineSection />
+      <TimelineSection /> 
       <TeamSection />
       <ValuesSection />
     </PageContainer>

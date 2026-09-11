@@ -78,8 +78,7 @@ export const ValuesGrid = styled.div`
 `;
 
 export const ValueCard = styled(motion.div)`
-  background: ${({ theme, $isHovered }) => 
-    $isHovered ? theme.colors.background.secondary : theme.colors.background.primary};
+  background: ${({ theme }) => theme.colors.background.secondary};
   border-radius: ${({ theme }) => theme.radii.lg}; // 16px
   padding: ${({ theme }) => theme.spacing.md}; // 25px
   border: 1px solid ${({ theme, $isHovered }) => 
@@ -124,6 +123,7 @@ export const ValueIcon = styled.div`
 
 export const ValueTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes.bodyLg}; // 1.125rem ≈ 18px
+  // color: ${({ theme }) => theme.colors.text.light};
   color: ${({ theme }) => theme.colors.text.primary};
   margin-bottom: ${({ theme }) => theme.spacing.sm}; // 10px
   position: relative;

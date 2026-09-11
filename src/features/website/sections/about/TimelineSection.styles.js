@@ -81,7 +81,7 @@ export const TimelineDot = styled.div`
 /* ================= CONTENT ================= */
 
 export const TimelineContent = styled.div`
-  background: ${({ theme }) => theme.colors.background.primary};
+  background: ${({ theme }) => theme.colors.background.secondary};
   border-radius: ${({ theme }) => theme.radii.lg};
   padding: 1.5rem;
   box-shadow: ${({ theme }) => theme.shadows.md};

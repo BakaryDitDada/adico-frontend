@@ -14,8 +14,6 @@ const baseTheme = {
     h3: '2.4rem',
     h2: '3.2rem',
     h1: '4rem',
-    // h2: 'clamp(2rem, 1.5vw + 1rem, 3.2rem)',
-    // h1: 'clamp(2.4rem, 2vw + 1rem, 4rem)',
   },
 
   fontWeights: {
@@ -35,7 +33,6 @@ const baseTheme = {
     body: 1.6,
   },
 
-  // Restored: Required by Typography.js primitives
   typography: {
     elements: {
       h1: { fontSize: 'clamp(2.4rem, 2vw + 1rem, 4rem)', fontWeight: 700, lineHeight: 1.2 },
@@ -74,7 +71,6 @@ const baseTheme = {
     largeDesktop: '1440px',
   },
 
-  // Motion controls UI transitions (hover states, modal openings)
   motion: {
     fast: '120ms ease',
     normal: '180ms ease',
@@ -94,15 +90,13 @@ const baseTheme = {
     headerHeight: '6.4rem',
   },
 
-  // ABSOLUTE COLORS: These never change based on Light/Dark mode.
-  // Useful when a primary button text MUST be white, even in Light Mode.
   colors: {
     common: {
       white: '#ffffff',
       black: '#000000',
       transparent: 'transparent',
     },
-    // Standard absolute Tailwind gray scale for raw reference
+    
     gray: {
       50: '#f9fafb',
       100: '#f3f4f6',
@@ -119,7 +113,6 @@ const baseTheme = {
   }
 };
 
-// Light Theme
 export const lightTheme = {
   ...baseTheme,
   mode: 'light',
@@ -159,7 +152,7 @@ export const lightTheme = {
     text: {
       primary: '#1f2937',
       secondary: '#4b5563',
-      light: '#9ca3af',
+      light: '#969ca8',
       inverse: '#ffffff',
     },
 
@@ -173,7 +166,6 @@ export const lightTheme = {
   },
 };
 
-// Dark Theme
 export const darkTheme = {
   ...baseTheme,
   mode: 'dark',

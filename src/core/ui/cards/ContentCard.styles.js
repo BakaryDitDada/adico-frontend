@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const CardWrapper = styled(motion.article)`
   display: flex;
-  background: ${({ theme }) => theme.colors.background.primary};
+  background: ${({ theme }) => theme.colors.background.secondary};
   border-radius: 16px;
   overflow: hidden;
   height: ${({ $height }) => $height || "43rem"};
@@ -24,6 +24,7 @@ export const CardWrapper = styled(motion.article)`
 export const MediaContainer = styled.div`
   position: relative;
   overflow: hidden;
+  border-radius: ${({ $layout }) => $layout === 'horizontal' ? '0 1.8rem 1.8rem 0' : '1.8rem 1.8rem 0 0'};
 
   
   /* Manage sizing based on layout */

@@ -34,10 +34,10 @@ export const ValueCard = styled(motion.div)`
   transition: all 0.3s ease;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
     box-shadow: ${({ theme }) => theme.shadows.lg};
-
-    .value-icon {
+    
+    & .vaalue-icon {
       transform: scale(1.1) rotate(5deg);
     }
   }

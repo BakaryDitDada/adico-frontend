@@ -13,13 +13,18 @@ import {
   FooterLinks, ContactInfo, ContactItem, LogoSection, Logo, 
   LogoImage, LogoText, Description, SocialLinks, SocialLink, 
   NewsletterForm, Input, SubmitButton, Copyright, Hours, 
-  NewsletterDesc, NewsletterTitle, GoToTop 
+  NewsletterDesc, NewsletterTitle, GoToTop, 
+  LogoContainer,
+  ThemeLogo
 } from './Layout.styles';
 import homeContent from '@/core/data/homeContent';
+import { useTheme } from 'styled-components';
 
 const contactConfig = homeContent?.contacts;
 
 export default function Footer() {
+  const theme = useTheme();
+
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
     // Handle newsletter subscription
@@ -44,12 +49,23 @@ export default function Footer() {
           <FooterGrid>
             <FooterSection>
               <LogoSection>
-                <Logo href="/">
-                  <LogoImage><span className="green">A</span><span className="yellow">D</span><span className="red">I</span>CO</LogoImage>
-                  <LogoText>
-                    <h1>{contactConfig.country}</h1>
-                  </LogoText>
-                </Logo>
+                <LogoContainer>
+                  {/* Light Mode Logo */}
+                  <ThemeLogo
+                    src={"images/LOGO-ADICO--LIGHT.jpg"} 
+                    alt="ADICO Consortium Logo"
+                    $isDarkMode={theme.mode === "dark"} 
+                    $logoMode={false} 
+                  />
+                  
+                  {/* Dark Mode Logo */}
+                  <ThemeLogo 
+                    src={"images/LOGO-ADICO--DARK.jpg"} 
+                    alt="ADICO Consortium Logo" 
+                    $isDarkMode={theme.mode === "dark"} 
+                    $logoMode={true} 
+                  />
+                </LogoContainer>
 
                 <Description>
                   {contactConfig.tagline}
@@ -69,6 +85,8 @@ export default function Footer() {
                   </SocialLink>
                 </SocialLinks>
               </LogoSection>
+      
+
             </FooterSection>
 
             <FooterSection>

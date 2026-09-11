@@ -262,6 +262,30 @@ export const homeContent = {
     ]
   },
 
+  testimonials: [
+    {
+      quote: "Grâce à l'intervention d'ADICO, notre commune dispose désormais d'un plan de développement clair et participatif. Les citoyens se sentent enfin écoutés.",
+      name: "Ousmane Traoré",
+      role: "Maire, Commune Rurale de Ségou",
+      avatar: "https://i.pravatar.cc/150?u=ousmane",
+      rating: 5
+    },
+    {
+      quote: "La formation sur la gouvernance locale a transformé notre approche. Nous gérons maintenant les ressources communautaires avec une transparence totale.",
+      name: "Aminata Diallo",
+      role: "Présidente d'Association de Femmes",
+      avatar: "https://i.pravatar.cc/150?u=aminata",
+      rating: 4
+    },
+    {
+      quote: "Leur approche n'est pas d'imposer des solutions, mais de nous donner les outils pour construire nous-mêmes notre plein épanouissement.",
+      name: "Ibrahim Coulibaly",
+      role: "Leader Communautaire",
+      avatar: "https://i.pravatar.cc/150?u=ibrahim",
+      rating: 5
+    }
+  ],
+
   ctaSectionContent: {
     title: "Rejoignez notre mission",
     description: "Ensemble, œuvrons pour le plein épanouissement des couches vulnérables et un développement inclusif et durable au Mali.",
