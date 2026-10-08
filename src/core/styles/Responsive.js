@@ -1,43 +1,27 @@
-import { css } from "styled-components"
+import { css } from "styled-components";
 
-const responsive = (props, media) => {
+const BREAKPOINTS = {
+  base: "28.75em",
+  sm: "47.5em",   // 760px
+  md: "56.25em",  // 900px
+  lg: "75em",     // 1200px
+  xl: "112.5em",  // 1800px
+};
 
-  if(media === "xs") {
-    return css`
-      @media (max-width: 28.75em) { 
-        ${props} 
-      };
-    `;
-  } else if(media === "sm") {
-    return css`
-      @media (max-width: 47.5em) { 
-        ${props}
-       };  
-      // 760px -- 760/16 = 37.5em
-    `;
-  } else if(media === "md") {
-    return css`
-      @media (max-width: 56.25em) {
-        ${props} 
-      }; 
-      // 900px -- 900/16 = 56.25em
-    `;
-  } else if(media === "lg") {
-    return css`
-      @media (max-width: 75em) { 
-        ${props}
-      };
-      // 1200px -- 1200/16 = 75em
-    `;
-  } else if(media === "xl") {
-    return css`
-      @media (min-width: 112.5em) { 
-        ${props}
-      }; 
-      // 1800px -- 1800/16 = 112.5em
-    `;
-  }
+const responsive = (styles, media) => {
+  const breakpoint = BREAKPOINTS[media];
 
+  if(!breakpoint) return ""
+
+  const query = media === "xl"
+    ? `(min-width: ${breakpoint})`
+    : `(max-width: ${breakpoint})`
+
+  return css`
+    @media ${query} {
+      ${styles}
+    }
+  `;
 }
 
 export default responsive;

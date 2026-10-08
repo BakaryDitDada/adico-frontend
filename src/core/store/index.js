@@ -2,8 +2,15 @@ import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 
 import { baseApiSlice } from "./baseApiSlice";
+
+// Import Reducers
 import globalReducer from "./globalSlice";
 import authReducer from "./features/auth/authSlice";
+import postsReducer from "./features/posts/postsSlice";
+
+// Import Middlewares
+import { formListenerMiddleware } from "./features/posts/formListenerMiddleware";
+
 
 // import employeesReducer from "../employees/store/employeesSlice";
 // import employeesFormReducer from "../employees/store/employeesFormSlice";
@@ -19,6 +26,7 @@ export const store = configureStore({
     [baseApiSlice.reducerPath]: baseApiSlice.reducer,
     auth: authReducer,
     global: globalReducer,
+    posts: postsReducer,
     // users: usersReducer,
     // employees: employeesReducer,
     // employeesForm: employeesFormReducer,
@@ -34,9 +42,17 @@ export const store = configureStore({
     // tasks: tasksReducer,
     
   },
-  middleware: getDefaultMiddleware => getDefaultMiddleware({
-    serializableCheck: false
-  }).concat(baseApiSlice.middleware)
+  middleware: getDefaultMiddleware => 
+    getDefaultMiddleware({
+      serializableCheck: {
+        // Ignore certain paths if storing complex objects, standard RTK config
+        ignoredActions: [],
+        ignoredPaths: [],
+      }
+    })
+      .prepend(formListenerMiddleware.middleware)
+      .concat(baseApiSlice.middleware),
+    // devTools: process.env.NODE_ENV !== "production",
 });
 
 export const RootState = store.getState;

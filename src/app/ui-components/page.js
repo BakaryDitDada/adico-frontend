@@ -9,8 +9,16 @@ import * as S from './UiComponents.styles';
 import { Heading1, Heading2 } from '@/core/styles/common/Typography.styles';
 import ContentCard from '@/core/ui/cards/ContentCard';
 import TestimonialSlider from '@/core/ui/testimonials/TestimonialSlider';
+import { CreatePostForm } from '@/features/platform/posts/CreatePostForm';
+import Modal from '@/core/ui/modals/Modal';
+import { useState } from 'react';
+import { Button } from '@/core/ui/Button';
 
 export default function UiComponentsPage() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onClose = () => setIsOpen(prev => !prev);
+
   const tabsData = [
     { label: 'Accordion', content: (
       <>
@@ -24,7 +32,7 @@ export default function UiComponentsPage() {
           <Accordion items={faqData} allowMultiple={true} />
         </S.Section>
       </>
-    ) },
+    )},
     {
     label: "Content Card",
     content: (
@@ -36,13 +44,27 @@ export default function UiComponentsPage() {
         height="30rem"
       />
     )
-  },
-  {
-    label: "Testimonial Slider",
-    content: (
-      <TestimonialSlider testimonials={testimonialsData} />
-    )
-  }
+    },
+    {
+      label: "Testimonial Slider",
+      content: (
+        <TestimonialSlider testimonials={testimonialsData} />
+      )
+    },
+    {
+      label: "Forms",
+      content: (
+        <CreatePostForm />
+      )
+    },
+    {
+      label: "Modals",
+      content: (
+
+        <Button onClick={() => onClose()}>Open Modal</Button>
+          
+      )
+    },
   ]
 
   return (
@@ -61,6 +83,10 @@ export default function UiComponentsPage() {
         <Heading1>
           UI Components Library
         </Heading1>
+
+        <Modal isOpen={isOpen} onClose={() => onClose()} title={"Modal Title"} size='xl'>
+          <CreatePostForm isInModal={true} />
+        </Modal>
         
         <Tabs tabs={tabsData} />
         

@@ -3,86 +3,95 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
+import { Menu, X, Phone, Mail, MapPin, Instagram, Youtube, Twitter, Facebook } from "lucide-react";
 import { useTheme } from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
 
 import homeContent from "@/core/data/homeContent";
 import ThemeToggle from "../../common/ThemeToggle";
+import AnimatedNavLink from "./AnimatedNavLink";
+import {
+  TOPBAR_VARIANTS,
+  MOBILE_MENU_VARIANTS,
+  NAV_ITEM_VARIANTS,
+} from "@/core/ui/Animations/headerAnimations";
+
 import {
   HeaderContainer,
-  TopBar,
+  TopBarWrapper,
   TopBarContent,
   ContactInfo,
   ContactItem,
   MainNav,
   NavContent,
-  Logo,
-  LogoText,
-  NavLinks,
-  NavLink,
+  DesktopNavLinks,
+  MobileMenuOverlay,
+  MobileNavLinkWrapper,
   MobileMenuButton,
-  LogoImage,
   ThemeLogo,
   LogoContainer,
 } from "./Layout.styles";
-import { Instagram, Youtube, Twitter, Facebook } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const theme = useTheme();
-
   const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 40);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = homeContent.navItems || [];
   const contact = {
-    phone: homeContent?.contacts?.phone.display,
-    email: homeContent?.contacts?.email.primary,
-    address: homeContent?.contacts?.address.full,
-  }
+    phone: homeContent?.contacts?.phone?.display,
+    email: homeContent?.contacts?.email?.primary,
+    address: homeContent?.contacts?.address?.full,
+  };
 
   return (
     <HeaderContainer $isScrolled={isScrolled}>
-      <TopBar>
+      {/* TopBar Animated Collapse on Scroll */}
+      <TopBarWrapper
+        variants={TOPBAR_VARIANTS}
+        animate={isScrolled ? "hidden" : "visible"}
+        initial="visible"
+      >
         <TopBarContent>
           <ContactInfo>
-            <ContactItem>
+            <ContactItem whileHover={{ scale: 1.05 }}>
               <Phone size={16} />
               <span>{contact.phone}</span>
             </ContactItem>
-            <ContactItem>
+            <ContactItem whileHover={{ scale: 1.05 }}>
               <Mail size={16} />
               <span>{contact.email}</span>
             </ContactItem>
-            <ContactItem>
+            <ContactItem whileHover={{ scale: 1.05 }}>
               <MapPin size={16} />
               <span>{contact.address}</span>
             </ContactItem>
           </ContactInfo>
+
           <ContactInfo>
-            <ContactItem title="Facebook">
-              <Facebook size={20} style={{cursor: "pointer"}}/>
-            </ContactItem>
-            <ContactItem title="Twitter">
-              <Twitter size={20} style={{cursor: "pointer"}}/>
-            </ContactItem>
-            <ContactItem title="YouTube">
-              <Youtube size={20} style={{cursor: "pointer"}}/>
-            </ContactItem>
-            <ContactItem title="YouTube">
-              <Instagram size={20} style={{cursor: "pointer"}}/>
-            </ContactItem>
+            {[
+              { Icon: Facebook, title: "Facebook" },
+              { Icon: Twitter, title: "Twitter" },
+              { Icon: Youtube, title: "YouTube" },
+              { Icon: Instagram, title: "Instagram" },
+            ].map(({ Icon, title }, idx) => (
+              <ContactItem key={idx} title={title} whileHover={{ y: -2, scale: 1.15 }}>
+                <Icon size={18} style={{ cursor: "pointer" }} />
+              </ContactItem>
+            ))}
           </ContactInfo>
-          <div style={{ display: "flex", gap: "15px" }}>
+
+          <div>
             <Link
               href="/dashboard"
               style={{
@@ -95,58 +104,78 @@ export default function Header() {
             </Link>
           </div>
         </TopBarContent>
-      </TopBar>
+      </TopBarWrapper>
 
+      {/* Main Navigation */}
       <MainNav>
         <NavContent>
-          {/* <Logo href="/" onClick={() => setIsMenuOpen(false)}>
-            <LogoImage><span className="green">A</span><span className="yellow">DI</span><span className="red">CO</span></LogoImage>
-            <LogoText>
-              <h1>Mali</h1>
-            </LogoText>
-          </Logo> */}
-          <LogoContainer>
-            {/* Light Mode Logo */}
-            <ThemeLogo
-              src={"images/LOGO-ADICO--LIGHT.jpg"} 
-              alt="ADICO Consortium Logo" 
-              // $isDarkMode={isDarkMode} 
-              $isDarkMode={theme.mode === "dark"} 
-              $logoMode={false} 
-            />
-            
-            {/* Dark Mode Logo */}
-            <ThemeLogo 
-              src={"images/LOGO-ADICO--DARK.jpg"} 
-              alt="ADICO Consortium Logo" 
-              $isDarkMode={theme.mode === "dark"} 
-              $logoMode={true} 
-            />
+          <LogoContainer whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+            <Link href="/">
+              <ThemeLogo
+                src="/images/LOGO-ADICO--LIGHT.jpg"
+                alt="ADICO Consortium Logo"
+                $isDarkMode={theme.mode === "dark"}
+                $logoMode={false}
+              />
+              <ThemeLogo
+                src="/images/LOGO-ADICO--DARK.jpg"
+                alt="ADICO Consortium Logo"
+                $isDarkMode={theme.mode === "dark"}
+                $logoMode={true}
+              />
+            </Link>
           </LogoContainer>
 
-          <NavLinks $isOpen={isMenuOpen}>
+          {/* Desktop Links with Sliding Active Indicator */}
+          <DesktopNavLinks>
             {navItems.map((item) => (
-              <NavLink
+              <AnimatedNavLink
                 key={item.href}
                 href={item.href}
-                $isActive={pathname === item.href}
-                onClick={() => setIsMenuOpen(false)}
+                isActive={pathname === item.href}
               >
                 {item.label}
-              </NavLink>
+              </AnimatedNavLink>
             ))}
-            {/* <CTAButton href="/contact">Nous Contacter</CTAButton> */}
-          </NavLinks>
+          </DesktopNavLinks>
 
-          <ThemeToggle />
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+            <ThemeToggle uniqueId="navbar" />
 
-          <MobileMenuButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </MobileMenuButton>
+            <MobileMenuButton 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Toggle Navigation"
+            >
+              {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
+            </MobileMenuButton>
+          </div>
         </NavContent>
       </MainNav>
-    </HeaderContainer>
-  )
- 
 
+      {/* Modern Circular Clip-Path Reveal Mobile Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <MobileMenuOverlay
+            variants={MOBILE_MENU_VARIANTS}
+            initial="closed"
+            animate="open"
+            exit="closed"
+          >
+            {navItems.map((item) => (
+              <MobileNavLinkWrapper key={item.href} variants={NAV_ITEM_VARIANTS}>
+                <AnimatedNavLink
+                  href={item.href}
+                  isActive={pathname === item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </AnimatedNavLink>
+              </MobileNavLinkWrapper>
+            ))}
+          </MobileMenuOverlay>
+        )}
+      </AnimatePresence>
+    </HeaderContainer>
+  );
 }

@@ -1,4 +1,5 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
 import Link from 'next/link';
 import responsive from '@/core/styles/Responsive';
 
@@ -19,21 +20,159 @@ export const MainContent = styled.main`
  * Header Container with dynamic background based on scroll
  * @param {boolean} isScrolled - Indicates if the page is scrolled
  */
-export const HeaderContainer = styled.header`
+// ------------------------------------------------
+export const HeaderContainer = styled(motion.header)`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: ${({ theme, $isScrolled }) => 
-    $isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent'};
-  backdrop-filter: ${({ $isScrolled }) => $isScrolled ? 'blur(10px)' : 'none'};
-  border-bottom: 1px solid ${({ theme, $isScrolled }) => 
-    $isScrolled ? theme.colors.border : 'transparent'};
-  transition: all 0.3s ease;
+  background: ${({ theme, $isScrolled }) =>
+    $isScrolled ? "rgba(255, 255, 255, 0.85)" : "transparent"};
+  backdrop-filter: ${({ $isScrolled }) => ($isScrolled ? "blur(16px)" : "none")};
+  // border-bottom: 1px solid ${({ theme, $isScrolled }) => $isScrolled ? theme.colors.border : "transparent"};
+  border-bottom: 1px solid ${({ theme, $isScrolled }) => $isScrolled ? "rgb(57 55 55 / 67%)" : "transparent"};
+  will-change: transform, background-color;
+`;
+
+export const TopBarWrapper = styled(motion.div)`
+  // background: ${({ theme }) => theme.colors.primary};
+  background: ${({ theme }) => theme.colors.background.secondary};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  color: white;
+  overflow: hidden;
+
+  ${responsive(
+    css`
+      display: none;
+    `,
+    "sm"
+  )}
+`;
+
+export const TopBarContent = styled.div`
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0.8rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
 `;
 
 export const ContactInfo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+`;
+
+export const ContactItem = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: ${({ theme }) => theme.fontSizes.caption};
+
+  svg {
+    flex-shrink: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+`;
+
+export const MainNav = styled.nav`
+  padding: 0.8rem 0;
+  background: ${({ theme }) => theme.colors.background.primary};
+`;
+
+export const NavContent = styled.div`
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const LogoContainer = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+`;
+
+export const ThemeLogo = styled.img`
+  width: 6rem;
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+  display: ${({ $isDarkMode, $logoMode }) =>
+    $isDarkMode === $logoMode ? "block" : "none"};
+`;
+
+export const DesktopNavLinks = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  ${responsive(
+    css`
+      display: none;
+    `,
+    "sm"
+  )}
+`;
+
+export const MobileMenuOverlay = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: ${({ theme }) => theme.colors.background.primary};
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+`;
+
+export const MobileNavLinkWrapper = styled(motion.div)`
+  perspective: 1000px;
+`;
+
+// export const MobileMenuButton = styled(motion.button)`
+//   display: none;
+//   background: none;
+//   border: none;
+//   color: ${({ theme }) => theme.colors.text.primary};
+//   cursor: pointer;
+//   padding: 8px;
+//   z-index: 1001;
+
+//   ${responsive(
+//     css`
+//       display: block;
+//     `,
+//     "sm"
+//   )}
+// `;
+// ------------------------------------------------
+// export const HeaderContainer = styled.header`
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   z-index: 1000;
+//   background: ${({ theme, $isScrolled }) => 
+//     $isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'transparent'};
+//   backdrop-filter: ${({ $isScrolled }) => $isScrolled ? 'blur(10px)' : 'none'};
+//   border-bottom: 1px solid ${({ theme, $isScrolled }) => 
+//     $isScrolled ? theme.colors.border : 'transparent'};
+//   transition: all 0.3s ease;
+// `;
+
+export const FooterContactInfo = styled.div`
   display: flex;
   flex-direction: ${({ $isColumn }) => $isColumn ? 'column' : 'row'};
   gap: ${({ $gap }) => $gap || '1.5rem'};
@@ -41,9 +180,13 @@ export const ContactInfo = styled.div`
   @media (max-width: 1024px) {
     gap: 1.5rem;
   }
+
+  ${responsive(css`
+    flex-direction: column;
+   `, "sm")}
 `;
 
-export const ContactItem = styled.div`
+export const FooterContactItem = styled.div`
   display: flex;
   align-items: ${({ $isColumn }) => $isColumn ? 'flex-start' : 'center'};
   gap: ${({ $isColumn }) => $isColumn ? '1.2rem' : '.8rem'};
@@ -75,29 +218,29 @@ export const TopBar = styled.div`
 
 `;
 
-export const TopBarContent = styled.div`
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.4rem;
-`;
+// export const TopBarContent = styled.div`
+//   max-width: 120rem;
+//   margin: 0 auto;
+//   padding: 0 2rem;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   font-size: 1.4rem;
+// `;
 
-export const MainNav = styled.nav`
-  padding: .8rem 0;
-  background: ${({theme}) => theme.colors.background.primary};
-`;
+// export const MainNav = styled.nav`
+//   padding: .8rem 0;
+//   background: ${({theme}) => theme.colors.background.primary};
+// `;
 
-export const NavContent = styled.div`
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
+// export const NavContent = styled.div`
+//   max-width: 120rem;
+//   margin: 0 auto;
+//   padding: 0 2rem;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// `;
 
 export const Logo = styled(Link)`
   display: flex;
@@ -221,7 +364,7 @@ export const CTAButton = styled(Link)`
   "sm")}
 `;
 
-export const MobileMenuButton = styled.button`
+export const MobileMenuButton = styled(motion.button)`
   display: none;
   background: none;
   border: none;
@@ -252,22 +395,22 @@ export const LogoImage = styled.div`
 `;
 
 // ADICO LOGO STYLES
-export const LogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-`;
+// export const LogoContainer = styled.div`
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   padding: 1rem;
+// `;
 
-export const ThemeLogo = styled.img`
-  width: 6rem;
-  max-width: 320px; /* Adjust based on your header/layout needs */
-  height: auto;
-  object-fit: contain;
+// export const ThemeLogo = styled.img`
+//   width: 6rem;
+//   max-width: 320px; /* Adjust based on your header/layout needs */
+//   height: auto;
+//   object-fit: contain;
 
-  /* Conditionally display based on the active mode */
-  display: ${({ $isDarkMode, $logoMode }) => ($isDarkMode === $logoMode ? 'block' : 'none')};
-`;
+//   /* Conditionally display based on the active mode */
+//   display: ${({ $isDarkMode, $logoMode }) => ($isDarkMode === $logoMode ? 'block' : 'none')};
+// `;
 
 /************************ ******************/
 /*********** PUBLIC FOOTER STYLES **********/
@@ -307,16 +450,18 @@ export const FooterContent = styled.div`
 
 export const FooterGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  align-content: center;
   gap: 40px;
-  
-  @media (min-width: 768px) {
+
+  ${responsive(css`
     grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  `, "md")}
+
+  ${responsive(css`
+    grid-template-columns: repeat(1, 1fr);
+  `, "sm")}
+
 `;
 
 export const FooterSection = styled.div`
@@ -325,6 +470,10 @@ export const FooterSection = styled.div`
     margin-bottom: 2rem;
     font-size: ${({ theme }) => theme.fontSizes.h3};
     font-weight: ${({ theme }) => theme.fontWeights.bold};
+
+    ${responsive(css`
+      text-align: center;
+    `, "md")}
   }
 `;
 
@@ -332,7 +481,17 @@ export const FooterLinks = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: ${({ theme }) => theme.fontSizes.caption};
+  font-size: ${({ theme }) => theme.fontSizes.body};
+
+
+  ${responsive(css`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0rem 2rem;
+  `, "md")}
   
   li {
     margin-bottom: 1.4rem;
@@ -361,8 +520,8 @@ export const LogoSection = styled.div`
 
 export const Description = styled.p`
   color: ${({ theme }) => theme.colors.text.secondary};
-  // font-size: ${({ theme }) => theme.fontSizes.caption};
   font-size: ${({ theme }) => theme.fontSizes.body};
+  text-align: justify;
   line-height: 1.6;
   margin-bottom: 20px;
 `;
@@ -371,6 +530,10 @@ export const SocialLinks = styled.div`
   display: flex;
   gap: 15px;
   margin-top: 20px;
+
+  ${responsive(css`
+    margin: 0 auto;
+  `, "md")}
 `;
 
 export const SocialLink = styled.a`
@@ -382,12 +545,12 @@ export const SocialLink = styled.a`
   align-items: center;
   justify-content: center;
   color: ${({ theme }) => theme.colors.text.secondary};
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   
   &:hover {
     background: ${({ theme }) => theme.colors.primary};
     color: white;
-    transform: translateY(-3px);
+    transform: translateY(-5px);
   }
 `;
 

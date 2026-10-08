@@ -59,7 +59,7 @@ export const adicoHeroConfig = {
       contentAlignment: 'left',
       ctas: [
         {
-          text: "Santé & Éducation",
+          text: "Découvrir nos actions",
           href: '/domaines/sante-education',
           variant: 'primary',
           size: 'large'
@@ -91,7 +91,7 @@ export const adicoHeroConfig = {
       contentAlignment: 'left',
       ctas: [
         {
-          text: "Actions Environnement",
+          text: "Découvrir nos actions",
           href: '/domaines/environnement',
           variant: 'primary',
           size: 'large'
@@ -123,7 +123,7 @@ export const adicoHeroConfig = {
       contentAlignment: 'left',
       ctas: [
         {
-          text: "Microfinance & AGR",
+          text: "En savoir plus",
           href: '/domaines/microfinance',
           variant: 'primary',
           size: 'large'

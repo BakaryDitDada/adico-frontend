@@ -23,7 +23,8 @@ export const ProjectsGridWrapper = styled.div`
 `;
 
 export const ProjectCard = styled(motion.article)`
-  background: ${({ theme }) => theme.colors.background.primary};
+  // background: ${({ theme }) => theme.colors.background.primary};
+  background: ${({ theme }) => theme.colors.background.secondary};
   border-radius: ${({ theme }) => theme.radii.xl};
   overflow: hidden;
   border: 1px solid ${({ theme }) => theme.colors.border};
@@ -143,7 +144,8 @@ export const CardMeta = styled.div`
   gap: ${({ theme }) => theme.spacing.sm};
   margin-bottom: ${({ theme }) => theme.spacing.lg};
   padding: ${({ theme }) => theme.spacing.md};
-  background: ${({ theme }) => theme.colors.background.secondary};
+  // background: ${({ theme }) => theme.colors.background.secondary};
+  background: ${({ theme }) => theme.colors.background.tertiary};
   border-radius: ${({ theme }) => theme.radii.md};
   
   .meta-item {

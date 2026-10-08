@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import { 
   FooterContainer, FooterContent, FooterGrid, FooterSection, 
-  FooterLinks, ContactInfo, ContactItem, LogoSection, Logo, 
+  FooterLinks, FooterContactInfo as ContactInfo, FooterContactItem as ContactItem, LogoSection, Logo, 
   LogoImage, LogoText, Description, SocialLinks, SocialLink, 
   NewsletterForm, Input, SubmitButton, Copyright, Hours, 
   NewsletterDesc, NewsletterTitle, GoToTop, 

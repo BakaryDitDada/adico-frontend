@@ -76,11 +76,13 @@ export const NewsGridWrapper = styled.div`
 `;
 
 export const NewsCard = styled(motion.article)`
-  background: ${({ theme }) => theme.colors.background.primary};
+  // background: ${({ theme }) => theme.colors.background.primary};
+  background: ${({ theme }) => theme.colors.background.secondary};
   border-radius: 16px; /* No exact match in theme, keep as is */
   overflow: hidden;
   border: 1px solid ${({ theme }) => theme.colors.border};
-  box-shadow: ${({ theme }) => theme.shadows.md};
+  box-shadow: ${({ theme }) => theme.shadows.lg};
+  // box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   transition: all 0.3s ease;
   height: 100%;
   display: flex;

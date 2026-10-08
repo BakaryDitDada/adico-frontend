@@ -1,4 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
+import responsive from '@/core/styles/Responsive';
 
 // Animations
 const fadeUp = keyframes`
@@ -25,10 +26,25 @@ const slowZoom = keyframes`
 export const HeroSliderContainer = styled.section`
   position: relative;
   width: 100%;
-  height: 85vh; /* Standard modern hero height, adjust as needed */
-  min-height: 600px;
+  height: calc(85vh - 6rem);
   overflow: hidden;
   background-color: #000;
+
+  ${responsive(css`
+    height: calc(75dvh - 6rem);
+    min-height: 520px;
+  `, "md")}
+
+  ${responsive(css`
+    height: calc(70dvh - 6rem);
+    min-height: 480px;
+  `, "sm")}
+
+  ${responsive(css`
+    height: 65dvh;
+    min-height: 440px;
+  `, "base")}
+
 `;
 
 export const Slide = styled.div`
@@ -216,7 +232,8 @@ export const ArrowButton = styled.button`
 
 export const NavigationButtons = styled.div`
   position: absolute;
-  bottom: 2rem;
+  bottom: 3.5rem;
+  // bottom: clamp(1rem, 3vw, 2.5rem);
   left: 50%;
   transform: translateX(-50%);
   display: flex;

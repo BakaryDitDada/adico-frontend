@@ -13,7 +13,7 @@ export const Overlay = styled(motion.div)`
 `;
 
 export const Dialog = styled(motion.div)`
-  background-color: ${({ theme }) => theme.colors.background.primary};
+  background-color: ${({ theme }) => theme.colors.background.secondary};
   border-radius: ${({ theme }) => theme.radii.lg};
   box-shadow: ${({ theme }) => theme.shadows.xl};
   width: 100%;
@@ -21,11 +21,12 @@ export const Dialog = styled(motion.div)`
     switch (size) {
       case 'sm': return '40rem';
       case 'lg': return '70rem';
+      case 'xl': return '95rem';
       default: return '55rem';
     }
   }};
   max-height: 90vh;
-  overflow-y: hidden;
+  overflow-y: auto;
   border: 1px solid ${({ theme }) => theme.colors.border};
 `;
 
@@ -35,6 +36,7 @@ export const Header = styled.div`
   justify-content: space-between;
   padding: ${({ theme }) => theme.spacing.lg};
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  // background: ${({ theme }) => theme.colors.background.primary}
 `;
 
 export const Title = styled.h2`
