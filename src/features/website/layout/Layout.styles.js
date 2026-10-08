@@ -39,7 +39,7 @@ export const TopBarWrapper = styled(motion.div)`
   // background: ${({ theme }) => theme.colors.primary};
   background: ${({ theme }) => theme.colors.background.secondary};
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-  color: white;
+  color: ${({ theme }) => theme.colors.text.primary};
   overflow: hidden;
 
   ${responsive(

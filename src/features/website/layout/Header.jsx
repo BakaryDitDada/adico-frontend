@@ -95,7 +95,7 @@ export default function Header() {
             <Link
               href="/dashboard"
               style={{
-                color: "white",
+                color: `${theme.colors.text.primary}`,
                 fontSize: "14px",
                 textDecoration: "none",
               }}
